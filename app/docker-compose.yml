@@ -1,0 +1,17 @@
+services:
+  back:
+    image: evaberry/docker
+    ports:
+      - "5002:5000"
+    environment:
+      - CURRENT_ENVIRONMENT=development
+    #volumes:
+    #  - ./logs/my-messages.log:/app/my-messages.log
+
+
+  front:
+    image: mon-front
+    ports:
+      - "8080:80"
+    environment:
+      - WS_BACK_URL=http://localhost:5002
