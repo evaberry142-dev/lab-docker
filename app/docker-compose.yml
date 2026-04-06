@@ -5,6 +5,8 @@ services:
       - CURRENT_ENVIRONMENT=development
     expose:
       - "5000"
+    # volumes:
+    #   - ./logs/my-messages.log:/app/my-messages.log
 
   front:
     image: mon-front
